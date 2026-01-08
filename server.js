@@ -37,18 +37,18 @@ const getKaohsiungWeather = async (req, res) => {
       {
         params: {
           Authorization: CWA_API_KEY,
-          locationName: "宜蘭縣",
+          locationName: "臺南市",
         },
       }
     );
 
-    // 取得高雄市的天氣資料
+    // 取得台南市的天氣資料
     const locationData = response.data.records.location[0];
 
     if (!locationData) {
       return res.status(404).json({
         error: "查無資料",
-        message: "無法取得高雄市天氣資料",
+        message: "無法取得台南市天氣資料",
       });
     }
 
